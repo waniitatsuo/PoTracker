@@ -2,10 +2,8 @@ import React, { useLayoutEffect } from 'react'; // 1. Adicionado useLayoutEffect
 import { View, Text, StyleSheet, Image, Linking, TouchableOpacity } from 'react-native';
 
 export default function AboutScreen({ navigation, route }) {
-  // 2. Recebendo o tema
   const { isDarkMode } = route.params || { isDarkMode: false };
 
-  // 3. Definindo as cores dinâmicas
   const backgroundColor = isDarkMode ? '#121212' : '#fff';
   const titleColor = isDarkMode ? '#fff' : '#000';
   const descriptionColor = isDarkMode ? '#ccc' : '#555'; // Cinza mais claro no modo escuro para leitura
@@ -57,7 +55,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    // Background removido daqui, inserido via style inline
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -70,25 +67,21 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    // Color removida daqui
   },
   description: {
     fontSize: 16,
     textAlign: 'center',
-    // Color removida daqui
     marginBottom: 30,
     lineHeight: 24,
   },
   subtitle: {
     fontSize: 14,
-    // Color removida daqui
     marginBottom: 5,
   },
   devName: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 40,
-    // Color removida daqui
   },
   button: {
     backgroundColor: '#2a75bb', // Azul estilo Pokemon (mantido pois contrasta bem no preto e no branco)

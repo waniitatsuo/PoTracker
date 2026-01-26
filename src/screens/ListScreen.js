@@ -15,7 +15,6 @@ export default function ListScreen({ navigation, route }) {
   const headerBg = isDarkMode ? '#121212' : '#FFFFFF'; // Cor de fundo do topo
   const headerText = isDarkMode ? '#FFFFFF' : '#000000'; // Cor do texto/seta do topo
 
-  // 2. CONFIGURAÇÃO DO CABEÇALHO (HEADER)
   // Esse trecho diz ao navegador para pintar a barra superior
   useLayoutEffect(() => {
     navigation.setOptions({

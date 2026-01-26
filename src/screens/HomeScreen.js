@@ -3,10 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen({ navigation }) {
-  // 2. CRIANDO O ESTADO DO TEMA
   const [theme, setTheme] = useState('light'); // Começa no modo claro
-
-  // 3. DEFININDO AS VARIÁVEIS QUE FALTAVAM
   const isDarkMode = theme === 'dark';
   
   // Função para trocar o tema
@@ -20,7 +17,6 @@ export default function HomeScreen({ navigation }) {
   const iconColor = isDarkMode ? '#FFD700' : '#000'; // Amarelo no escuro (Sol), Preto no claro (Lua)
 
   return (
-    // 4. APLICANDO A COR DE FUNDO DINÂMICA
     <View style={[styles.container, { backgroundColor: backgroundColor }]}>
       
       <Image 
@@ -77,7 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // A cor de fundo aqui será sobrescrita pelo estilo dinâmico lá em cima
   },
   logo: {
     width: 250,

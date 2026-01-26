@@ -3,28 +3,19 @@ import { View, Text, Image, StyleSheet, ActivityIndicator, Button, ScrollView } 
 import api from '../services/api';
 
 export default function DetailsScreen({ route, navigation }) {
-  // 2. Recebendo isDarkMode
   const { pokemonId, isDarkMode } = route.params;
   
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // 3. DEFININDO CORES DINÂMICAS
-  // Se for escuro: Fundo Preto. Se for claro: Fundo Vermelho Pokedex
-  const backgroundColor = isDarkMode ? '#121212' : '#FF3D00';
-  
-  // O card onde ficam as infos
+  // Verificação de Modo escuro ativo
+  const backgroundColor = isDarkMode ? '#121212' : '#FF3D00';  
   const cardColor = isDarkMode ? '#1E1E1E' : '#ffffff';
-  
-  // Cores de texto
   const textColor = isDarkMode ? '#ffffff' : '#333333';
   const subTextColor = isDarkMode ? '#aaaaaa' : '#888888';
-  
-  // Cor dos badges de tipo (Grama, Fogo...)
   const badgeBg = isDarkMode ? '#333333' : '#eeeeee';
   const badgeText = isDarkMode ? '#ffffff' : '#555555';
 
-  // 4. CONFIGURANDO O HEADER (TOPO)
   useLayoutEffect(() => {
     navigation.setOptions({
       title: details ? `#${details.id} ${details.name.toUpperCase()}` : 'Detalhes', // Título dinâmico
@@ -72,7 +63,7 @@ export default function DetailsScreen({ route, navigation }) {
   return (
     <ScrollView contentContainerStyle={[styles.container, { backgroundColor }]}>
       
-      {/* 5. APLICANDO CORES NO CARD */}
+      {/* APLICANDO CORES NO CARD */}
       <View style={[styles.card, { backgroundColor: cardColor }]}>
         
         <Image 
@@ -122,7 +113,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 20,
     justifyContent: 'center',
-    // Background removido daqui e passado via style inline
   },
   loadingContainer: {
     flex: 1,
@@ -130,7 +120,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    // Cor de fundo removida daqui
     borderRadius: 20,
     padding: 20,
     alignItems: 'center',

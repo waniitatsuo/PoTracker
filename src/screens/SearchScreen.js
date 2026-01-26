@@ -11,18 +11,14 @@ export default function SearchScreen({ navigation, route }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // 3. Definindo Cores Dinâmicas
   const backgroundColor = isDarkMode ? '#121212' : '#fff';
   const textColor = isDarkMode ? '#fff' : '#000';
   const cardColor = isDarkMode ? '#1E1E1E' : '#f9f9f9';
   const subTextColor = isDarkMode ? '#ccc' : '#666';
-  
-  // Cores específicas para o Input
   const inputBg = isDarkMode ? '#2C2C2C' : '#fff'; 
   const inputBorder = isDarkMode ? '#444' : '#ccc';
   const placeholderColor = isDarkMode ? '#aaa' : '#888';
 
-  // 4. Configurando o Header (Topo)
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Busca',
@@ -118,7 +114,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    // Background color movido para style inline
     alignItems: 'center',
   },
   title: {
@@ -135,7 +130,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderWidth: 1,
-    // Cores de borda e fundo movidas para inline
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
@@ -148,7 +142,6 @@ const styles = StyleSheet.create({
   },
   resultCard: {
     marginTop: 30,
-    // Background color movido para style inline
     width: '100%',
     padding: 20,
     borderRadius: 10,
@@ -168,7 +161,6 @@ const styles = StyleSheet.create({
   resultName: {
     fontSize: 18,
     fontWeight: 'bold',
-    // color movido para inline
   },
   tapText: {
     fontSize: 12,
